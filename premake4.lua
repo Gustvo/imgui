@@ -1,4 +1,4 @@
-Project "imgui"
+project "imgui"
   kind "StaticLib"
   language "C++"
   buildoptions { "-std=c++17" }
