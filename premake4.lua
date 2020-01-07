@@ -3,10 +3,7 @@ Project "imgui"
   language "C++"
   buildoptions { "-std=c++17" }
   
-  outputdir = outputDir
-  
   objdir("obj/" .. outputDir .. project().name .. "/")
-  targetdir("bin/" .. outputDir .. project().name .. "/debug")
   
   files {
     "*.cpp",
@@ -14,7 +11,9 @@ Project "imgui"
   }
   
   configuration "Debug"
+    targetdir("bin/" .. outputDir .. project().name .. "/debug")
     flags { "StaticRuntime", "Symbols", "ExtraWarnings" }
     
   configuration "Release"
+    targetdir("bin/" .. outputDir .. project().name .. "/release")
     flags { "StaticRuntime", "OptimizeSpeed", "FatalWarnings" }
